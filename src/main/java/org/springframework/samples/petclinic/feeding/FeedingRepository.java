@@ -13,7 +13,7 @@ public interface FeedingRepository extends CrudRepository<Feeding,Integer>{
     List<Feeding> findAll();
 
     @Query("SELECT fed FROM FeedingType fed")
-    List<FeedingType> findAllFeedingTypes();
+    List<FeedingType> findAllFeedingTypes(); 
 
     @Query("SELECT ft FROM FeedingType ft WHERE ft.name LIKE :name")
     FeedingType getFeedingType(@Param("name") String name);
