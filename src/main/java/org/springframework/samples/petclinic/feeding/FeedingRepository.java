@@ -18,6 +18,9 @@ public interface FeedingRepository extends CrudRepository<Feeding,Integer>{
     @Query("SELECT ft FROM FeedingType ft WHERE ft.name LIKE :name")
     FeedingType getFeedingType(@Param("name") String name);
 
+    @Query("SELECT f FROM Feeding f WHERE f.pet.name LIKE :name")
+    FeedingType getFeedingByPet(@Param("name") String pet);
+
     Optional<Feeding> findById(int id);
     Feeding save(Feeding p);
 }
